@@ -1,0 +1,26 @@
+<form ngForm>
+<div class="form-group">
+  <label for="firstName">First Name</label>
+  <input type="text" id="firstNamea" name="firstName" maxlength="5" minlength="2" ngModel #firstName ="ngModel" class="form-control" required>
+  <div class="alert alert-danger" *ngIf="firstName.touched && firstName.errors?.required">First name is required</div>
+  <div class="alert alert-danger" *ngIf="firstName.touched && firstName.errors?.minlength">min length required</div>
+</div>
+<div class="form-group">
+  <label for="comment">Comment</label>
+  <textarea name="comment" ngModel id="comment" cols="30" rows="10" class="form-control">
+
+  </textarea>
+</div>
+<div ngModelGroup="groups" #group="ngModelGroup">
+    <div class="alert alert-danger" *ngIf="!group.valid">Group is not valid</div>
+  <div class="form-group">
+    <label for="lastname">Last Name</label> 
+    <input type="text" id="lastname" required name="lastname" class="form-control" ngModel #lastname="ngModel">
+  </div>
+  <div class="form-group">
+      <label for="age">Age</label> 
+      <input type="number" id="age" required name="age" class="form-control" ngModel #age="ngModel">
+    </div>
+</div>
+<button class="btn-primary">Save</button>
+</form> 

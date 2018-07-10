@@ -1,0 +1,10 @@
+<div class="container">
+<h3>Http</h3>
+<input type="text" class="form-control" (keyup.enter)="submitData(element)" #element>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let user of data">
+    <button class="btn btn-primary" (click)="onUpdate(user.id,user.title)">Update</button>
+    {{user.title}}
+  </li>
+</ul>
+</div>

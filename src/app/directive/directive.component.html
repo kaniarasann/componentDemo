@@ -1,0 +1,35 @@
+<p *ngIf = "showDiv;then showRecords else hideRecords"></p>
+
+<ng-template #showRecords>
+<h1>Show Records</h1>
+</ng-template>
+<ng-template #hideRecords>
+<h1>Hide Records</h1>
+</ng-template>
+
+<div class="container">
+  <h3>Switch Case</h3>
+  <ul class="list-inline">
+    <li><a [class.active]="viewMode == '1'" (click)='viewMode = 1'>Menu 1</a></li>
+    <li><a [class.active]="viewMode == '2'" (click)='viewMode = 2'>Menu 2</a></li>
+  </ul>
+  <div [ngSwitch]="viewMode">
+    <div *ngSwitchCase="'1'"><h1>Div Menu 1</h1></div>
+    <div *ngSwitchCase="'2'"><h1>Div Menu 2</h1></div>
+    <div *ngSwitchDefault><h1>Div Default</h1></div>
+  </div>
+</div>
+
+<div class="container">
+  <h3>ng For</h3>
+  <ul>
+    <li *ngFor="let i of courses;index as in;trackBy:trackParam">
+       {{i}} {{in}}
+    </li>
+  </ul>
+</div>
+
+<div class="container">
+  <h3>Safe Transclude</h3>
+  {{obj.name?.FirstName}}
+</div>

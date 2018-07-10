@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-md-6">
+    Class binding
+  </div>
+  <div class="col-md-6">
+    <button class="btn btn-primary" [class.IsActive]="isActive">Save</button>
+  </div>
+  <div class="col-md-6">
+    Style binding
+  </div>
+  <div class="col-md-6">
+    <button class="btn btn-primary" [style.backgroundColor]="isActive?'red':'white'">Save</button>
+  </div>
+  <div class="col-md-6">
+    Event binding
+  </div>
+  <div class="col-md-6">
+    <button class="btn btn-primary" (click)="clickEvent($event)">Save</button>
+  </div>
+  <div class="col-md-6">
+    Event Filtering
+  </div>
+  <div class="col-md-6">
+    <input type="text" (keyup.enter)="clickEventFilter()">
+  </div>
+  <div class="col-md-6">
+    Template Variable
+  </div>
+  <div class="col-md-6">
+    <input #email type="text" (keyup.enter)="templateVariable(email.value)">
+  </div>
+  <div class="col-md-4">
+    Two way binding
+  </div>
+  <div class="col-md-4">
+    <input type="text" [(ngModel)]="emailAddress">
+  </div>
+  <div class="col-md-4">
+    {{emailAddress}}
+  </div>
+  <div class="col-md-6">
+    Pipes
+  </div>
+  <div class="col-md-6">
+    <table>
+      <tr>
+        <td>
+          Number
+        </td>
+        <td>
+          {{756.5821 | number:'3.2-2'}}
+        </td>
+      </tr>
+      <tr>
+        <td>Currency</td>
+        <td>{{12125 | currency:'INR'}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-md-6">
+    Custom Pipes
+  </div>
+  <div class="col-md-6">
+    {{'jhadsgjh jasgdhjasg jasdghjas djahsgd asjhasgd ajs dhj | summary:10'}}
+  </div>
+</div>
