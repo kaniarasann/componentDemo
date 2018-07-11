@@ -24,6 +24,7 @@ import { UserDetailComponent } from './routing/user-detail/user-detail.component
 import { HeaderComponent } from './common/header/header.component';
 import { AutheAuthoComponent } from './authe-autho/authe-autho.component';
 import { HomeComponent } from './home/home.component';
+import { LoginService } from './services/login-service';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { HomeComponent } from './home/home.component';
   providers: [
     CourseService,
     DummyDataService,
+    LoginService,
     {provide: ErrorHandler, useClass: GlobalErrorHandler}
   ],
   bootstrap: [AppComponent]
