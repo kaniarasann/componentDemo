@@ -2,6 +2,7 @@ import { CourseService } from './course.service';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgModule, ErrorHandler } from '@angular/core';
+import {RouterModule} from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -17,31 +18,39 @@ import { ApidataComponent } from './apidata/apidata.component';
 import { HttpModule } from '@angular/http';
 import { DummyDataService } from './services/dummy-data.service';
 import { GlobalErrorHandler } from './common/gloablErrorHandler';
+import { Routes } from './common/roots';
+import { UserListComponent } from './routing/user-list/user-list.component';
+import { UserDetailComponent } from './routing/user-detail/user-detail.component';
+import { HeaderComponent } from './common/header/header.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    CoursesComponent, 
-    CourseCliComponent, 
-    DataEventsComponent, 
-    ReusableComponent, 
-    DirectiveComponent, 
-    CusDirectiveDirective, 
-    TemplateFormComponent, 
-    ReactiveFormsComponent, 
-    ApidataComponent
+    AppComponent,
+    CoursesComponent,
+    CourseCliComponent,
+    DataEventsComponent,
+    ReusableComponent,
+    DirectiveComponent,
+    CusDirectiveDirective,
+    TemplateFormComponent,
+    ReactiveFormsComponent,
+    ApidataComponent,
+    UserListComponent,
+    UserDetailComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(Routes.route)
   ],
   providers: [
     CourseService,
     DummyDataService,
-    {provide:ErrorHandler,useClass:GlobalErrorHandler}
+    {provide: ErrorHandler, useClass: GlobalErrorHandler}
   ],
   bootstrap: [AppComponent]
 })
