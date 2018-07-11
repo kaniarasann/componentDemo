@@ -22,6 +22,8 @@ import { Routes } from './common/roots';
 import { UserListComponent } from './routing/user-list/user-list.component';
 import { UserDetailComponent } from './routing/user-detail/user-detail.component';
 import { HeaderComponent } from './common/header/header.component';
+import { AutheAuthoComponent } from './authe-autho/authe-autho.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -38,14 +40,16 @@ import { HeaderComponent } from './common/header/header.component';
     ApidataComponent,
     UserListComponent,
     UserDetailComponent,
-    HeaderComponent
+    HeaderComponent,
+    AutheAuthoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(Routes.route)
+    RouterModule.forRoot(Routes.routeWithChild)
   ],
   providers: [
     CourseService,

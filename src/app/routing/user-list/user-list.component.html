@@ -1,6 +1,6 @@
 <ul>
   <li *ngFor="let item of data">
-    <a [routerLink]="['/userdetail',item.id,item.name]" >{{item.name}}</a>
+    <a [routerLink]="['/home/userdetail',item.id,item.name]" >{{item.name}}</a>
       <button type="button" (click)="navigateToDetailPage(item.id,item.name)" class="btn btn-primary">Edit</button>
   </li>
 </ul>

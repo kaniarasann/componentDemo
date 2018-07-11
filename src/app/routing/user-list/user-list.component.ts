@@ -25,6 +25,6 @@ export class UserListComponent implements OnInit {
   }
 
   navigateToDetailPage(id: number, name: string): void {
-   this.router.navigate(['/userdetail', id, name]);
+   this.router.navigate(['/home/userdetail', id, name]);
   }
 }
