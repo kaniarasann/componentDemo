@@ -18,13 +18,13 @@ import { ApidataComponent } from './apidata/apidata.component';
 import { HttpModule } from '@angular/http';
 import { DummyDataService } from './services/dummy-data.service';
 import { GlobalErrorHandler } from './common/gloablErrorHandler';
-import { Routes } from './common/roots';
 import { UserListComponent } from './routing/user-list/user-list.component';
 import { UserDetailComponent } from './routing/user-detail/user-detail.component';
 import { HeaderComponent } from './common/header/header.component';
 import { AutheAuthoComponent } from './authe-autho/authe-autho.component';
 import { HomeComponent } from './home/home.component';
 import { LoginService } from './services/login-service';
+import { routeWithChild } from './common/roots';
 
 
 @NgModule({
@@ -50,7 +50,7 @@ import { LoginService } from './services/login-service';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(Routes.routeWithChild)
+    RouterModule.forRoot(routeWithChild)
   ],
   providers: [
     CourseService,

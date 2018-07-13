@@ -1,35 +1,11 @@
-import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './../home/home.component';
 import { AutheAuthoComponent } from './../authe-autho/authe-autho.component';
 import { Route } from '@angular/router';
 import { UserListComponent } from '../routing/user-list/user-list.component';
 import { UserDetailComponent } from '../routing/user-detail/user-detail.component';
+import { Injectable } from '../../../node_modules/@angular/core';
 
-export class Routes {
-  static route: Route[] = [
-    {
-      path: 'userlist',
-      component: UserListComponent
-    },
-    {
-      path: 'userdetail/:id/:name',
-      component: UserDetailComponent
-    },
-    {
-      path: '**',
-      redirectTo: 'login'
-    },
-    {
-      path: 'login',
-      component: AutheAuthoComponent
-    },
-    {
-      path: '',
-      pathMatch: 'full',
-      redirectTo: 'login'
-    }
-  ];
-  static routeWithChild: Route[] = [
+export const routeWithChild: Route[] = [
    {
      path: 'login',
      component: AutheAuthoComponent
@@ -51,4 +27,5 @@ export class Routes {
     redirectTo: 'login'
   }
   ];
-}
+
+
