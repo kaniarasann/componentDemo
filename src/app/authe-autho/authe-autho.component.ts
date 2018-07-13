@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {
   FormGroup,
   FormBuilder,
@@ -18,7 +18,8 @@ export class AutheAuthoComponent implements OnInit {
   public token: string;
   constructor(private fb: FormBuilder,
     private loginService: LoginService,
-    private route: Router) {}
+    private route: Router,
+    private activatedRoute:ActivatedRoute) {}
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -29,9 +30,11 @@ export class AutheAuthoComponent implements OnInit {
 
   login() {
     this.loginService.submitData(this.form.value).subscribe((x: Response) => {
+      let queries:string;
+      this.activatedRoute.queryParamMap.subscribe(x=> queries = x.get("returnUrl"));
       this.token = (x.json() as any).token;
       localStorage.setItem('token', this.token);
-      this.route.navigate(['/home']);
+      this.route.navigate([queries ? queries : '/home']);
     });
   }
 }

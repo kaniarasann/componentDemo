@@ -25,6 +25,7 @@ import { AutheAuthoComponent } from './authe-autho/authe-autho.component';
 import { HomeComponent } from './home/home.component';
 import { LoginService } from './services/login-service';
 import { routeWithChild } from './common/roots';
+import { RouteProtector } from './common/RouteProtector';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { routeWithChild } from './common/roots';
     CourseService,
     DummyDataService,
     LoginService,
+    RouteProtector,    
     {provide: ErrorHandler, useClass: GlobalErrorHandler}
   ],
   bootstrap: [AppComponent]
